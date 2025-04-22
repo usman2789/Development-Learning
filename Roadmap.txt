@@ -1,0 +1,20 @@
+              
+        Es6
+         |                                                                         _
+         React js--(Quiz interface ui)                                              |    
+         |                                                                          |
+         Sql--(database designing)                                                  |
+         |                                                                          /           Javascript
+         Postgre sql--(database of test app)                                        \
+         |                                                                           |
+         Next js--(auth,proper working,db connection)                               _|
+         |                                                                           
+         Apis--connect gemini modal                                                 _
+         |                                                                           |            
+         Supabase--(use postgresql db,add auth,connect with next js app)             /      Node js
+         |                                                                           \
+         Gemini api fine tunning--(fine tune gemini modal for portfolio,test app)    _|
+         |
+         Express js/Nest js
+         |
+         Typescript

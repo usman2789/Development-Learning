@@ -1,0 +1,11 @@
+If your goal is to get to market fast with clean UI → Tailwind wins.
+
+If your goal is precise UI behavior, style logic, or a reusable design system → Emotion or Styled
+ Components shine.
+
+
+
+Prefer ShadCN UI if you need pre-styled, customizable components with a quick setup and easy integration for consistent design and custom logic.
+
+
+Prefer Radix UI if you need headless, highly accessible components that give you full control over styling and a modular, flexible approach to building UI.

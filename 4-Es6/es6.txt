@@ -1,0 +1,2 @@
+es6 itself part of js
+this the js that you must know before start working on react

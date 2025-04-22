@@ -1,0 +1,3 @@
+Supabase is baas
+Good for low to medium level apps
+For apps where we have to scale up and down overnight

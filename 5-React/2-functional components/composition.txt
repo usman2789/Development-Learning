@@ -1,0 +1,312 @@
+### **Composition vs Inheritance in React**
+
+#### **What is Composition?**
+
+
+- Building complex components by combining smaller, reusable components.
+- Pass data or behavior to components using **props**.
+- Use the **children prop** to inject content into a component.
+- Example: A **Card** component can have a generic structure, and you can pass different titles and content (like text, lists, or buttons) into it using
+ props. Similarly, a **Button** component can accept props like color, label, and onClick handler to make it reusable for different purposes.
+- A **Button** is a single component that you create once in your `components` folder but can use it across different pages and places in your app with
+ different content, links, or colors.
+- Promotes modularity, flexibility, and reusability.
+
+#### **What is Inheritance?**
+
+
+- Creating a hierarchy of components where a child component inherits properties/methods from a parent component.
+- Common in object-oriented programming (OOP).
+- Creates tight coupling between parent and child components.
+
+#### **Which is Preferred in React?**
+- **Composition is preferred over inheritance.**
+
+#### **Why Composition is Preferred in React?**
+1. **Flexibility**: Components can be customized easily using props.
+2. **Avoids Tight Coupling**: Components remain independent, making them easier to reuse.
+3. **Easier to Understand**: Composition results in a flatter, modular structure that’s simpler to read and maintain.
+4. **Aligns with React’s Philosophy**: React is designed for declarative UI building, which fits naturally with composition.
+5. **Reusable**: Generic components can be reused in multiple contexts.
+
+#### **When Might Inheritance Be Used?**
+
+- Rare cases like utility classes or third-party libraries.
+- Even in such cases, composition is often a better alternative.
+
+#### **Conclusion**
+
+- Use **composition** to build reusable, maintainable, and flexible components in React.
+- Avoid **inheritance** as it creates rigid structures and goes against React’s design principles.
+
+                         ****Important to note:*****
+
+##Props are a tool for passing data from parent to child and behavior between components.
+
+##Composition is a broader concept that involves structuring your components in a modular and
+  reusable way, often using props as part of the process.
+
+##Together, props and composition form the foundation of React’s component-based architecture, 
+  enabling you to build scalable, maintainable, and flexible applications.
+
+
+###How the page load when parent pass props####
+
+
+parent component load page and pass props(data) to child component and it renders according to it
+
+
+
+     ***How to add composition with  props in react components***
+
+Using 
+
+  src/
+├── components/
+│   └── ProductCard/
+│       ├── ProductCard.jsx
+│       ├── ProductImage.jsx
+│       ├── ProductTitle.jsx
+│       ├── ProductPrice.jsx
+│       └── AddToCartButton.jsx
+├── pages/
+│   └── Home.jsx
+├── App.jsx
+
+✅ Components
+
+🔹 ProductImage.jsx
+jsx
+Copy
+Edit
+const ProductImage = ({ src, alt }) => (
+  <img src={src} alt={alt} className="w-full h-48 object-cover rounded" />
+);
+
+export default ProductImage;
+
+
+
+
+🔹 ProductTitle.jsx
+jsx
+Copy
+Edit
+const ProductTitle = ({ children }) => (
+  <h2 className="text-lg font-semibold">{children}</h2>
+);
+
+export default ProductTitle;
+
+
+
+
+🔹 ProductPrice.jsx
+jsx
+Copy
+Edit
+const ProductPrice = ({ value }) => (
+  <p className="text-green-600 font-bold">${value}</p>
+);
+
+export default ProductPrice;
+
+
+
+
+🔹 AddToCartButton.jsx
+jsx
+Copy
+Edit
+const AddToCartButton = ({ onClick }) => (
+  <button onClick={onClick} className="bg-blue-600 text-white px-4 py-2 rounded">
+    Add to Cart
+  </button>
+);
+
+export default AddToCartButton;
+
+
+
+
+🔹 ProductCard.jsx---[Child Component--layout handled by it]
+jsx
+Copy
+Edit
+import ProductImage from './ProductImage';
+import ProductTitle from './ProductTitle';
+import ProductPrice from './ProductPrice';
+import AddToCartButton from './AddToCartButton';
+
+const ProductCard = ({ image, title, price, onAddToCart }) => (
+  <div className="border p-4 rounded shadow-sm max-w-sm">
+    <ProductImage src={image} alt={title} />
+    <div className="mt-2 space-y-1">
+      <ProductTitle>{title}</ProductTitle>
+      <ProductPrice value={price} />
+      <AddToCartButton onClick={onAddToCart} />
+    </div>
+  </div>
+);
+
+export default ProductCard;
+
+
+
+
+
+✅ Usage Example
+🔹 Home.jsx  --[Parent Component]
+jsx
+Copy
+Edit
+import ProductCard from '../components/ProductCard/ProductCard';
+
+const Home = () => {
+  const handleAddToCart = () => alert('Added to cart!');
+
+  return (
+    <div className="p-6">
+      <ProductCard
+        image="https://example.com/shoe.jpg"
+        title="Running Shoes"
+        price={59.99}
+        onAddToCart={handleAddToCart}
+      />
+    </div>
+  );
+};
+
+export default Home;
+
+
+
+🔹 App.jsx
+jsx
+Copy
+Edit
+import Home from './pages/Home';
+
+function App() {
+  return <Home />;
+}
+
+export default App;
+
+
+
+🧠 TL;DR
+Organize related components in a folder.
+
+Use default export per file.
+
+Compose them into a parent (ProductCard) and import it where needed.
+
+Keep things modular, readable, and scalable.
+
+
+
+Role	              |   Component	         |     Purpose
+Parent	              |   Home.jsx	         |     Sends data via props
+Child	              |   ProductCard.jsx        |     Receives props, renders layout
+Sub-children	      |   ProductImage,title,etc |     Small reusable building blocks
+
+
+
+                  
+                 ****How to use composition with props.children in React*****
+
+
+✅ 1. ProductCard.jsx –[ the Child Component]
+jsx
+Copy
+Edit
+// components/ProductCard.jsx
+
+const ProductCard = ({ children }) => {
+  return (
+    <div className="border p-4 rounded shadow max-w-sm">
+      {children}
+    </div>
+  );
+};
+
+export default ProductCard;
+
+
+This is now a generic card layout. It just wraps and renders whatever the parent sends.
+
+
+
+
+
+✅ 2. Home.jsx – [the Parent Component]
+jsx
+Copy
+Edit
+// pages/Home.jsx
+
+import ProductCard from '../components/ProductCard';
+
+const Home = () => {
+  const handleAddToCart = () => {
+    alert("Added to cart!");
+  };
+
+  return (
+    <ProductCard>
+      <img
+        src="https://example.com/shoe.jpg"
+        alt="Running Shoes"
+        className="w-full h-40 object-cover rounded"
+      />
+      <h2 className="text-xl font-semibold mt-2">Running Shoes</h2>
+      <p className="text-gray-600 mt-1">$59.99</p>
+      <button
+        onClick={handleAddToCart}
+        className="mt-3 bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Add to Cart
+      </button>
+    </ProductCard>
+  );
+};
+
+export default Home;
+
+
+
+🧠 What's Different?
+
+
+The card layout is now flexible.
+
+You control what goes inside the card from the parent (Home.jsx).
+
+Useful when you have many card types with different layouts but want a consistent wrapper (border, padding, etc.).
+
+
+
+✅ When to prefer this version?
+
+
+Use this props.children style if you want:
+
+Custom layouts per card (some with ratings, some with tags, etc.).
+
+A generic layout wrapper with consistent styling.
+
+Flexibility in design.
+
+
+
+ ***In this props.children version:
+
+
+The child component (ProductCard) is just a styled container (a wrapper).
+
+The parent component (Home) is where you build the full layout/content of the ecommerce card.
+
+
+
+

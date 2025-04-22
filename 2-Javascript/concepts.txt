@@ -1,0 +1,41 @@
+basics
+
+Variables (let, const) – scope and hoisting
+
+data types
+
+type casting
+
+expresssions and operators
+
+Conditionals & Loops
+
+JavaScript -error handling
+
+Functions  
+
+DOM Manipulation
+
+Objects – creation, destructuring, nesting
+
+Classes-Prototypes
+
+Arrays & Array Methods
+
+Strings
+
+This keyword
+
+aysnc JS
+
+apis
+
+iterators-generators
+
+modules
+
+Events
+
+strict mode
+
+oop-ds-algorithms

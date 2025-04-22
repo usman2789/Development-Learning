@@ -1,0 +1,13 @@
+This file contain the rules and standards which will be follow during learning:
+
+1-- First make a clear map,what to learn first,then what..
+
+2--While learning make sure to follow structure way,make notes,push them to github,start with basics,and start working on it,then
+while when required learn advance oncepts at first just learn what need to start.
+
+3--Focus more on building then just learning,learn the things first that directly utilized in your project,and other things slowly.
+
+4--Give major time to the things you are actively learning
+
+5--give minor or extra time to side learning things
+

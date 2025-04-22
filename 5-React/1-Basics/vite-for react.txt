@@ -1,0 +1,97 @@
+                                           🧩 What is Vite?
+
+
+Vite is a modern build tool that helps you run and build frontend apps like React, Vue, and others.
+
+It is known for being:
+
+Super fast
+
+Easy to use
+
+Great for modern JavaScript apps
+
+The word "Vite" means "fast" in French — and it really lives up to that name!
+
+                 npm create vite@latest
+
+
+
+                                        🚀 Main Features of Vite
+
+
+
+⚡ Instant Start
+
+Your app starts in less than a second, even if it's big,also use to make pwa app.
+
+
+🔥 Fast Hot Reload
+
+When you change code, your browser updates instantly without reloading everything,during build time use rollup,swc(speedy web compiler).
+
+
+📦 Modern Code Support
+
+Works out of the box with ES Modules, TypeScript, JSX, Tailwind CSS, and more.
+
+
+🔧 Easy Setup
+
+No complex configs needed to get started. Just npm create vite@latest.
+
+
+🚀 Optimized Production Build
+
+Uses Rollup to build fast, small, and optimized files when you're ready to deploy.
+
+
+
+
+                       🛠️ How is Vite Different from Older Tools Like Webpack?
+
+
+🐢 Old Tools (like Webpack):
+
+
+When you start the app, it bundles (combines) all your files (JS, CSS, images) into big files.
+
+This bundling takes time, especially if your app is large.
+
+Every time you make a change, it re-bundles everything again.
+
+This makes it slow to start and slow to update during development.
+
+
+
+⚡ Vite:
+
+Does NOT bundle everything when you start the app.
+
+Uses modern browsers to load only the files that are needed.
+
+If you change one file, only that file updates — super fast.
+
+It still bundles your app later (for production), but only when you're ready to deploy.
+
+
+
+                         📦 What Does "Bundle Your App" Mean?
+
+
+Think of it like this:
+
+Your app has many small files (components, styles, images).
+
+Bundling means combining all those small files into a few big files so the browser can load them faster.
+
+Old tools bundle everything before you even start working.
+
+Vite skips bundling during development, which makes it lightning-fast.
+
+
+
+                                   ✅ Summary (One-Liner)
+
+
+Vite is a super-fast modern tool that helps you build and run React apps quickly, by skipping slow bundling during development and using smart optimization later
