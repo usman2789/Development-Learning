@@ -11,3 +11,8 @@ while when required learn advance oncepts at first just learn what need to start
 
 5--give minor or extra time to side learning things
 
+
+Resources
+
+w3 school is a good platform to start while use other platforms along it like,frontend masters,data camp,docs...for 
+advance concepts and mastery
