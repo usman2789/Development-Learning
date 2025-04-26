@@ -1,4 +1,7 @@
-              
+ This is the roadmap I will stick with till 9 of july
+
+
+             
         Es6
          |                                                                         _
          React js--(Quiz interface ui)                                              |    

@@ -1,0 +1,23 @@
+
+ The courses and certifications to complete in upcoming three months
+
+Github Foundations
+
+Introduction to Ai-Netcad
+
+Azure 900
+
+Google ai essentials-coursera
+
+React js-Frontend Masters
+
+Sql-Datcamp
+
+Postgre sql-Datacamp
+
+Next js-Frontend Masters
+
+Next js/Supabase-Udemy
+
+Shad cn ui-Udemy
+
